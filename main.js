@@ -61,7 +61,7 @@ var app = http.createServer(function(request,response){
         var post = qs.parse(body);
         var title = post.title;
         var description = post.description;
-        var filteredId = path.parse(queryData.id).base;
+        var filteredId = path.parse(title).base;
         fs.writeFile(`data/${filteredId}`, description, 'utf8', function(err){
           response.writeHead(302, {Location: `/?id=${title}`});
           response.end();
