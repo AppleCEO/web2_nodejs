@@ -37,7 +37,7 @@ var app = http.createServer(function(request,response){
       fs.readdir('./data', function(error, filelist){
         var title = "Welcome";
         var description = "Hello, Node.js";
-        var list = template.List(filelist);
+        var list = template.list(filelist);
     
       var html = template.HTML(title, list, 
         `<form action="/create_process" method="post">
